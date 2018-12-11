@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>A-Frame learning - picture2</title>
+<script src="js/0.3.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <!-- 写真の読み込み -->
+        <a-sky src="img/picture.jpg"></a-sky>
+        <!-- 画像 -->
+        <a-image src="img/small_star1_blue.png" position="0 0 0"></a-image>
+        <a-image src="img/small_star2_skyblue.png" position="0 0 0"></a-image>
+        <a-image src="img/small_star3_brown.png" position="0 0 0"></a-image>>
+        <a-image src="img/small_star4_pink.png" position="0 0 0"></a-image>
+        <a-image src="img/small_star5_purple.png" position="0 0 0"></a-image>
+        <a-image src="img/small_star6_orange.png" position="0 0 0"></a-image>
+        <a-image src="img/small_star7_yellow.png" position="0 0 0"></a-image>
+        <a-image src="img/small_star8_red.png" position="0 0 0"></a-image>
+        <a-image src="img/small_star9_green.png" position="0 0 0"></a-image>
+        <a-image src="img/small_star1_blue.png" position="0 0 0"></a-image>
+        <a-image src="img/small_star2_skyblue.png" position="0 0 0"></a-image>
+        <a-image src="img/small_star3_brown.png" position="0 0 0"></a-image>>
+        <a-image src="img/small_star4_pink.png" position="0 0 0"></a-image>
+        <a-image src="img/small_star5_purple.png" position="0 0 0"></a-image>
+        <a-image src="img/small_star6_orange.png" position="0 0 0"></a-image>
+        <a-image src="img/small_star7_yellow.png" position="0 0 0"></a-image>
+        <a-image src="img/small_star8_red.png" position="0 0 0"></a-image>
+        <a-image src="img/small_star9_green.png" position="0 0 0"></a-image>
+    </a-scene>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 物体を回転させる
+        var rotate = function(img, angle) {
+            // 角度が360以上にならないように
+            if(angle > 360) {
+                angle = 0;
+            } else {
+            angle += 0.5;
+            }
+            // 次フレームの準備
+            requestAnimationFrame(rotate.bind(null, img, angle));
+            // 属性値を変更して回転
+            img.setAttribute('rotation', '0 ' + angle * 10 + ' 0');
+            img.setAttribute('position', Math.cos(Math.PI * angle / 180) * 4 + ' ' + (Math.sin(Math.PI * angle * 8 / 180) / 2 + 1.5) + ' ' + Math.sin(Math.PI * angle / 180) * 4);
+        }
+
+        var imgs = document.querySelectorAll('a-image');
+
+        for (var i = 0; i < imgs.length; i++) {
+            // カーソルで拡大
+            imgs[i].addEventListener('mouseenter', function () {
+                this.textContent = null;
+                var animation = document.createElement('a-animation');
+                animation.setAttribute('attribute', 'scale');
+                animation.setAttribute('to', '3 3 3');
+                animation.setAttribute('dur', '500');
+                this.appendChild(animation);
+            });
+            imgs[i].addEventListener('mouseleave', function () {
+                this.textContent = null;
+                var animation = document.createElement('a-animation');
+                animation.setAttribute('attribute', 'scale');
+                animation.setAttribute('to', '1 1 1');
+                animation.setAttribute('dur', '500');
+                this.appendChild(animation);
+            });
+            rotate(imgs[i], 20 * i);
+        }
+    });
+    </script>
+</body>
+</html>
