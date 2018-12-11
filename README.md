@@ -3,7 +3,7 @@
 [https://developer.mozilla.org/ja/docs/Games/Techniques/3D_on_the_web/Building_up_a_basic_demo_with_A-Frame](https://developer.mozilla.org/ja/docs/Games/Techniques/3D_on_the_web/Building_up_a_basic_demo_with_A-Frame)
 
 ## Demo2: VRの現状 - スマホブラウザでお手軽VR 第1回 -
-[https://www.ntt-tx.co.jp/column/dojo_review_blog/20160606/](https://www.ntt-tx.co.jp/column/dojo_review_blog/20160606/e)
+[https://www.ntt-tx.co.jp/column/dojo_review_blog/20160606/](https://www.ntt-tx.co.jp/column/dojo_review_blog/20160606/)
 
 ## デプロイURL
 - [Demo1（基本のオブジェクト配置）](https://aframe-dev-xdishtnffp.now.sh/)
