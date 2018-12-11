@@ -3,12 +3,28 @@
 <head>
 <meta charset="utf-8">
 <title>A-Frame learning - picture</title>
-<script src="js/aframe.min.js"></script>
+<script src="js/0.3.0/aframe.min.js"></script>
 </head>
 <body>
     <a-scene>
         <!-- 写真の読み込み -->
         <a-sky src="img/picture.jpg"></a-sky>
+        <!-- 直方体 -->
+        <a-box color="#d4e676" width="2" height="3" depth="1" position="3 2 -5" rotation="0 20 20"></a-box>
+        <!-- 円柱 -->
+        <a-cylinder color="#ccc" position="0 0 -10">
+            <a-animation
+                attribute="rotation"
+                to="0 360 360"
+                dur="2000"
+                repeat="indefinite"
+                easing="linear">
+            </a-animation>
+        </a-cylinder>
+        <!-- 画像 -->
+        <a-image src="img/small_star7_yellow.png" position="-2 2 -3"></a-image>
+        <!-- ライト -->
+        <a-light type="point" color="orange" position="0 -1.8 8"></a-light>
     </a-scene>
 </body>
 </html>
